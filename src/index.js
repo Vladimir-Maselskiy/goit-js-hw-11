@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { refs } from './refs';
-import { makeHTML } from './makeIndeHTMLResponce';
+import { makeHTML } from './makeHTMLResponce';
 import { renderHTML } from './renderHTML';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { searchInstance, options } from './makeAPIRequestInstance';
@@ -17,6 +17,7 @@ function onSearch(event) {
   refs.showMoreBlock.classList.add('not-visible');
   eventTarget = event.target;
   options.params.q = refs.input.value;
+  options.params.page = event.target.id === 'search-form' ? 1 : options.params.page + 1;
   fetchSeachRequest(options);
 }
 
