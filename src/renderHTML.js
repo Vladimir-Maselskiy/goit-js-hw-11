@@ -1,5 +1,7 @@
 import { refs } from './refs';
 import SimpleLightbox from 'simplelightbox';
+import { options } from './makeAPIRequestInstance';
+// import options from './makeAPIRequestInstance';
 
 let lightbox = null;
 

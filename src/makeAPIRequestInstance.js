@@ -12,6 +12,8 @@ const options = {
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: 'true',
+    per_page: 40,
+    page: 1,
   },
 };
 
