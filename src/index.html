@@ -7,10 +7,25 @@
     <title>Homework 11</title>
   </head>
   <body>
-    <input type="text" id="search-box" />
-    <ul class="country-list"></ul>
-    <div class="country-info"></div>
-
-    <script src="index.js"></script>
+    <header class="section-header">
+      <form class="form-wrapper search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          id="search"
+          placeholder="Search images..."
+          required
+        />
+        <button type="submit" id="submit">go</button>
+      </form>
+    </header>
+    <div class="gallery">
+      <!-- Карточки изображений -->
+    </div>
+    <div class="show-more-block not-visible">
+      <button type="button" id="show-more">show more</button>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>
