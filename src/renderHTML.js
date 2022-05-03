@@ -1,7 +1,5 @@
 import { refs } from './refs';
 import SimpleLightbox from 'simplelightbox';
-import { options } from './makeAPIRequestInstance';
-// import options from './makeAPIRequestInstance';
 
 let lightbox = null;
 
@@ -9,12 +7,19 @@ export function renderHTML(stringHTMLResponce, eventTarget) {
   if (eventTarget.id === 'search-form') {
     refs.gallery.innerHTML = '';
     refs.showMoreBlock.classList.remove('not-visible');
-    refs.gallery.insertAdjacentHTML('beforeend', stringHTMLResponce);
+    insertHLML(stringHTMLResponce);
     lightbox = new SimpleLightbox('.gallery a');
-    return;
   }
 
-  refs.gallery.insertAdjacentHTML('beforeend', stringHTMLResponce);
-  lightbox.refresh();
-  refs.showMoreBlock.classList.remove('not-visible');
+  if (eventTarget.id === 'show-more') {
+    insertHLML(stringHTMLResponce);
+    lightbox.refresh();
+    refs.showMoreBlock.classList.remove('not-visible');
+  }
+
+  refs.showMoreButton.removeAttribute('disabled');
+
+  function insertHLML(htmlMarkup) {
+    refs.gallery.insertAdjacentHTML('beforeend', htmlMarkup);
+  }
 }
