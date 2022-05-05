@@ -2,6 +2,7 @@ const axios = require('axios');
 import { makeHTML } from './makeHTMLResponce';
 import { renderHTML } from './renderHTML';
 import { makeNotiflixInfo } from './makeNotiflixInfo';
+import { mafeScrollAction } from './makeScrollAction';
 
 const KEY = '27043383-c7c491508b66f3626efdecd2d';
 const BASE_URL = `https://pixabay.com/api/`;
@@ -26,10 +27,10 @@ function fetchSeachRequest(eventTarget) {
   searchInstance
     .get('', options)
     .then(responce => {
-      console.log(responce);
       const stringHTMLResponce = makeHTML(responce.data.hits);
       renderHTML(stringHTMLResponce, eventTarget);
       makeNotiflixInfo(responce, options, eventTarget);
+      mafeScrollAction();
     })
     .catch(console.log);
 }

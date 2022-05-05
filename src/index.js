@@ -1,5 +1,6 @@
 import './css/styles.css';
 import { refs } from './refs';
+import { setSeachIterfaceOption } from './setSearchInterfaceOption';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchSeachRequest, options } from './makeAPIRequestInstance';
 
@@ -9,6 +10,7 @@ refs.showMoreButton.addEventListener('click', onSearch);
 let eventTarget = null;
 
 function onSearch(event) {
+  setSeachIterfaceOption();
   event.preventDefault();
   if (event.target.id === 'search-form') {
     refs.showMoreBlock.classList.add('not-visible');

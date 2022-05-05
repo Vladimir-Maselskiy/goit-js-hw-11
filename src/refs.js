@@ -6,4 +6,5 @@ export const refs = {
   gallery: document.querySelector('.gallery'),
   showMoreBlock: document.querySelector('.show-more-block'),
   showMoreButton: document.querySelector('#show-more'),
+  scrollInput: document.querySelector('[value="scroll"]'),
 };
