@@ -46,7 +46,7 @@ a {
   border-radius: 10px;
   box-shadow: 0 3px 3px rgba(255, 255, 255, 0.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
   margin: 100px auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 8px;
   width: 450px;
 }
@@ -95,6 +95,23 @@ a {
 #show-more:focus {
   background-color: #31b2c3;
   background-image: linear-gradient(top, #0483a0, #31b2c3);
+}
+
+.search-block {
+  display: block;
+  height: 50px;
+  /* position: absolute; */
+  /* bottom: 0; */
+}
+
+.radio-block {
+  display: block;
+  /* position: absolute; */
+  /* bottom: 0; */
+}
+
+.radio-block__label {
+  margin-top: 0;
 }
 
 .form-wrapper #submit:active,

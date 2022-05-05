@@ -9,25 +9,27 @@
   <body>
     <header class="section-header">
       <form class="form-wrapper search-form" id="search-form">
-        <input
-          type="text"
-          name="searchQuery"
-          autocomplete="off"
-          id="search"
-          placeholder="Search images..."
-          required
-        />
-        <button type="submit" id="submit">go</button>
+        <div class="search-block">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            id="search"
+            placeholder="Search images..."
+            required
+          />
+          <button type="submit" id="submit">go</button>
+        </div>
 
-        <div>
-          <p>Choose a interface:</p>
+        <div class="radio-block">
+          <p class="radio-block__label">Choose SHOW MORE interface:</p>
           <label>
             <input type="radio" name="interface" value="scroll" checked />
-            Scroll
+            Infinite scroll
           </label>
           <label>
             <input type="radio" name="interface" value="search button" />
-            Search button
+            Show more button
           </label>
         </div>
       </form>

@@ -23,16 +23,12 @@ const searchInstance = axios.create({
   baseURL: BASE_URL,
 });
 
-function fetchSeachRequest(eventTarget) {
-  searchInstance
-    .get('', options)
-    .then(responce => {
-      const stringHTMLResponce = makeHTML(responce.data.hits);
-      renderHTML(stringHTMLResponce, eventTarget);
-      makeNotiflixInfo(responce, options, eventTarget);
-      mafeScrollAction();
-    })
-    .catch(console.log);
+async function fetchSeachRequest(eventTarget) {
+  const responce = await searchInstance.get('', options);
+  const stringHTMLResponce = makeHTML(responce.data.hits);
+  renderHTML(stringHTMLResponce, eventTarget);
+  makeNotiflixInfo(responce, options, eventTarget);
+  mafeScrollAction();
 }
 
 export { fetchSeachRequest, options };
