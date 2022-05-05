@@ -7,7 +7,10 @@ export function renderHTML(stringHTMLResponce, eventTarget) {
   if (eventTarget.id === 'search-form') {
     refs.gallery.innerHTML = '';
     insertHLML(stringHTMLResponce);
-    lightbox = new SimpleLightbox('.gallery a');
+    lightbox = new SimpleLightbox('.gallery a', {
+      captionsData: 'alt',
+      captionDelay: 250,
+    });
     if (!refs.scrollInput.checked) refs.showMoreBlock.classList.remove('not-visible');
   }
 
